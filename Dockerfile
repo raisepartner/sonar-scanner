@@ -33,4 +33,8 @@ RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /var/local/sonar-s
 RUN ln -s /var/local/sonar-scanner/bin/sonar-scanner /usr/bin/sonar-scanner \
   && ln -s /var/local/sonar-scanner/bin/sonar-scanner-debug /usr/bin/sonar-scanner-debug
 
+RUN apt-get update \
+  && apt-get install -y curl wget git \
+  && rm -rf /var/lib/apt/lists/*
+
 CMD /usr/bin/sonar-scanner
