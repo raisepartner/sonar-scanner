@@ -1,0 +1,2 @@
+#!/bin/sh
+docker build --build-arg SONAR_SCANNER_VERSION=4.0.0.1744-linux -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
